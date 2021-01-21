@@ -5,6 +5,9 @@ const vip = (prefix) => {
 	╠➥ _*${prefix}emojitopng <query>*_
 	╠➥ _*${prefix}joox <text>*_ 
         ╠➥ _*${prefix}play <text>*_
+        ╠➥ _*${prefix}ytmp4 <linkyt>*_
+        ╠➥ _*${prefix}ytmp3 <linkyt>*_
+        ╠➥ _*${prefix}ytm3 <text>*_
 	╠➥ _*${prefix}resepmakan <keu>*_
 	╠➥ _*${prefix}nsfwanime*
 	╚════♬*VIP*♬══════
