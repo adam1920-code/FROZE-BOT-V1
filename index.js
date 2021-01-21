@@ -380,6 +380,7 @@ async function starts() {
 					break 
 			    case 'ytm3':
 			    if (!isOo) return reply(mess.only.user)
+                            if (!isVip) return reply(`*[❗] Fitur Ini Hanya Untuk User Premium*`)
 			    if (args.length < 1) return reply('_[❗] Url Tidak ada!!!_')
 			    lobby = body.slice(9)
 			    reply(`[❗] Wait Searching Tunggu 3± menit`)
@@ -624,6 +625,7 @@ async function starts() {
 					break
                     case 'ytmp4': 
                     if (!isOo) return reply(mess.only.user)
+                    if (!isVip) return reply(`*[❗] Fitur Ini Hanya Untuk User Premium*`)
 					if (args.length < 1) return reply('❎Url Tidak Di Temukan❎')
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
 					anu = await fetchJson(`https://st4rz.herokuapp.com/api/ytv2?url=${args[0]}`, {method: 'get'})
