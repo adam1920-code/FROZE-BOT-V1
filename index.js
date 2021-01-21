@@ -39,7 +39,7 @@ const time = moment.tz('Asia/Jakarta').format('DD/MM HH:mm:ss')
 const {vip} = require('./vipmenu/vip')
 const vcard = 'BEGIN:VCARD\n'
             + 'VERSION:3.0\n' // Versi Bot Kamu
-            + 'FN:Mr.Virtex\n' // Nama kamu
+            + 'FN:Adam oey107\n' // Nama kamu
             + 'ORG:FROZEBO%;\n' // Nama bot
             + 'TEL;type=CELL;type=VOICE;waid=6281539336834:+62 815-3933-6834\n' //Nomor whatsapp kamu
             + 'END:VCARD'
