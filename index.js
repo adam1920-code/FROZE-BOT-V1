@@ -225,7 +225,7 @@ async function starts() {
 					if (!isOo) return reply(mess.only.user)
 					gg = body.slice(8)
                     reply(mess.wait)
-                    anu = await fetchJson (`https://api.zeks.xyz/api/tfire?text=${gg}&apikey=Beli Sendiri`, {method: 'get'})
+                    anu = await fetchJson (`https://api.zeks.xyz/api/tfire?text=${gg}&apikey=apivinz`, {method: 'get'})
                     butt = await getBuffer(anu.result)
                     client.sendMessage(from, butt, image, {quoted: mek, caption: 'nih'})
                     break
@@ -250,7 +250,7 @@ async function starts() {
 					case 'daftar':
 					client.updatePresence(from, Presence.composing)
 					if (isOo) return reply('*Kak Susah Terdaftar 🙂*')
-					if (args.length < 1) return reply(`Parameter Salah\nCommand : ${prefix}daftar nama|umur\nContoh : ${prefix}daftar MR|12`)
+					if (args.length < 1) return reply(`Parameter Salah\nCommand : ${prefix}daftar nama|umur\nContoh : ${prefix}daftar adam|17`)
 					var reg = body.slice(8)
 					var jeneng = reg.split("|")[0];
 					var umure = reg.split("|")[1];
@@ -347,11 +347,11 @@ async function starts() {
                     teks = '*TITLE*:${anu.title}\n*HARGA*:${anu.harga}\n\n\n*SPECIFIKASI*:${anu.spesifikasi}'
                     reply(teks)
                     break 
-                    case 'pintserch':
+                    case 'pinterest':
                     if (!isOo) return reply(mess.only.user)
                     pint = body.slice(11)
                     reply(mess.wait)
-                    anu = await fetchJson(`https://api.zeks.xyz/api/pin?q=${pint}&apikey=`)
+                    anu = await fetchJson(`https://api.zeks.xyz/api/pin?q=${pint}&apikey=apivinz`)
                     bufft = await getBuffer(anu.result)
                     client.sendMessage(from, bufft, image, {quoted: mek, caption: '☺️'})
                     break
@@ -402,7 +402,7 @@ async function starts() {
 		      if (!isOo) return reply(mess.only.user)
 		      if (args.length < 1) return reply(`*Mod Apa Yang mau Um Cari?*`)
 		      reply(mess.wait)
-		      anu = await fetchJson(`https://tobz-api.herokuapp.com/api/happymod?q=${body.slice(7)}&apikey=${tobxapi}`, {method: 'get'})
+		      anu = await fetchJson(`https://tobz-api.herokuapp.com/api/happymod?q=${body.slice(7)}&apikey=${tobzapi}`, {method: 'get'})
 		      buffter = await getBuffer(anu.result.image)
 		      teks = `*➥NAME*:${anu.result.title}\n*➥PRICE*:${anu.price}\n*➥PURCHASE*:${anu.purchase}\n*➥${anu.root}*\n*➥SIZE*:${anu.size}\n*➥VERSION*:${anu.version}\n\n\n\n*➥Link*:${anu.download}`
 		      client.sendMessage(from, buffter, image, {quoted: mek, caption: teks})
@@ -435,7 +435,7 @@ async function starts() {
               if (!isOo) return reply(mess.only.user)
               if (args.length < 1) return reply(`*[❗] Text Tidak ada Tolong Masukan Paramenter ^_^*`)
               reply(mess.wait)
-              anu = await fetchJson(`https://tobz-api.herokuapp.com/api/textpro?theme=jokerlogo&text=${body.slice(9)}&apikey=Beli Work`)
+              anu = await fetchJson(`https://tobz-api.herokuapp.com/api/textpro?theme=jokerlogo&text=${body.slice(9)}&apikey=${tobzapi}`)
               buty = await getBuffer(anu.result)
               client.sendMessage(from, buty, image, {quoted: mek, caption: '✨Jadi'})
               if (anu.error) return reply(anu.error)
@@ -498,7 +498,7 @@ async function starts() {
                if (!isOo) return reply(mess.only.user)
                if (!isVip) return reply(`*[❗] Fitur Ini Hanya Untuk User Premium*`)
 				if (args.length < 1) return reply('Nama lagunya apa kak?')
-                    anu = await fetchJson(`https://tobz-api.herokuapp.com/api/joox?q=${body.slice(7)}&apikey=${BotWeA}`, {method: 'get'})
+                    anu = await fetchJson(`https://tobz-api.herokuapp.com/api/joox?q=${body.slice(7)}&apikey=${tobzapi}`, {method: 'get'})
                     buffter = await getBuffer(anu.result.thumb)
                     teks = `*➥ALBUM*:${anu.result.album}\n*➥UPLOAD*:${anu.result.dipublikasi}\n*➥JUDUL*:${anu.result.judul}\n\n\n Sedang Mendownload Lagu`
                     client.sendMessage(from, buffter, image, {quoted: mek, caption: teks})
@@ -510,7 +510,7 @@ async function starts() {
 			     if (args.length < 1) return reply(`❎Text Nya Mana Om❎`)
 			     sus = body.slice(7)
 			     reply(mess.wait)
-			     anu = await fetchJson(`https://tobz-api.herokuapp.com/api/lirik?q=${sus}&apikey=${BotWeA}`, {method: 'get'})
+			     anu = await fetchJson(`https://tobz-api.herokuapp.com/api/lirik?q=${sus}&apikey=${tobzapi}`, {method: 'get'})
 			     teks = `${anu.result.lirik}`
 			     reply(teks)
 			     break
@@ -640,7 +640,7 @@ async function starts() {
 					if (!isOo) return reply(mess.only.user)
 					arti = body.slice(8)
 					if (args.length < 1) return reply(`[❗] Text Nya Mana Om???`)
-					anu = await fetchJson(`http://api-melodicxt.herokuapp.com/api/primbon-arti-nama?name=${arti}&apiKey=administrator${apiy}`, {method: 'get'})
+					anu = await fetchJson(`https://arugaz.my.id/api/primbon/artinama?name=${body.slice(8)}`, {method: 'get'})
 					teks = `*➸NAMA*:${arti}\n*➸ARTI*:${anu.result}`
 					reply(teks)
 					break 
@@ -648,7 +648,7 @@ async function starts() {
 					if (!isOo) return reply(mess.only.user)
 					artis = body.slice(11)
 					if (args.length < 1) return reply(`[❗] Text Nya mana Om`)
-					anu = await fetchJson(`http://api-melodicxt.herokuapp.com/api/primbon-arti-mimpi?query=${artis}&apiKey=${apiy}`, {method: 'get'})
+					anu = await fetchJson(`https://arugaz.my.id/api/primbon/tafsirmimpi?mimpi=${body.slice(11)}`, {method: 'get'})
 					teks = `*➥MIMPI*:${artis}\n*➥ARTI*:${anu.result}`
 					reply(teks)
 					break 
@@ -674,7 +674,8 @@ async function starts() {
 			     	break
                 case 'shorturl':
                     if (!isOo) return reply(mess.only.user)
-                    anu = await fetchJson(`https://tobz-api.herokuapp.com/api/shorturl?url=${body.slice(10)}`)
+                    url = body.slice(9)
+                    anu = await fetchJson(`https://tobz-api.herokuapp.com/api/bitly?url=${body.slice(9)}&apikey=${tobzapi}`)
 			        hasil = `${anu.result}`
 			        reply(hasil)
 			        break
@@ -695,7 +696,7 @@ async function starts() {
                         reply('✔️Suksesk Kak Menganti Nya ^_^')
                     break		
                     case 'grup':
-					case 'pintu': 
+					case 'opengc': 
 					if (!isOo) return reply(mess.only.user)
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
@@ -703,7 +704,7 @@ async function starts() {
 					if (args[0] === 'buka') {
 					    reply(`✔️Berhasi Membuka Grup Kak✔️`)
 						client.groupSettingChange(from, GroupSettingChange.messageSend, false)
-					} else if (args[0] === 'tutup') {
+					} else if (args[0] === 'closegc') {
 						reply(`✔️Berhasi Tutup Grup Kak ^_^✔️`)
 						client.groupSettingChange(from, GroupSettingChange.messageSend, true)
 					}
@@ -1168,7 +1169,7 @@ async function starts() {
                 case 'mod':
                 if (!isOo) return reply(mess.only.user)
                  reply(mess.wait)
-                 anu = await fetchJson(`https://tobz-api.herokuapp.com/api/moddroid?q=${body.slice(7)}&apikey=${BotWeA}`, {method: 'get'})
+                 anu = await fetchJson(`https://tobz-api.herokuapp.com/api/moddroid?q=${body.slice(7)}&apikey=${tobzapi}`, {method: 'get'})
                  teks = `*TiITLE*:${anu.title}\n*GENRE*:${anu.genre}\n*VERSION*:${anu.latest_version}\n*SIZE*:${anu.size}\n*PUBLISHED*:${anu.publisher}\n\n\n\n*LINK*:${anu.download}`
                  reply(teks)
 				case 'url2img':
@@ -1207,10 +1208,11 @@ async function starts() {
 						buffermm = await getBuffer(res.result)
 						client.sendMessage(from, buffermm, image, {quoted: mek, caption: 'ni anjim'})
 					break
-                    case 'simi':
+                    case 'bot':
                     if (!isOo) return reply(mess.only.user)
                     if (args.length < 1) return reply(`Text Nya mana Um???`)
-                    anu = await fetchJson(`https://mhankbarbar.tech/api/samisami?text=${body.slice(7)}`)
+                    teks = body.slice(10)
+                    anu = await fetchJson(`https://tobz-api.herokuapp.com/api/simsimi?text=${body.slice(10)}&apikey=${tobzapi}`)
                     reply(anu.result)
                     break 
                     case 'urlimg'://url mana
@@ -1453,7 +1455,7 @@ async function starts() {
                 if (!isOo) return reply(mess.only.user)
                 teet = body.slice(7)
                 reply(mess.wait)
-                buffer = await getBuffer('https://arugaz.my.id/api/textpro/toxictext?text='+ teet)
+                buffer = await getBuffer('https://arugaz.my.id/api/textpro/toxictext?text=${body.slice(7)}'+ teet)
                 client.sendMessage(from, buffer, image, {quoted: mek, caption: 'ini'})
                 break 
                 case 'wolflogo':
@@ -1470,7 +1472,7 @@ async function starts() {
                 reply(mess.wait)
                 if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                 play = body.slice(5)
-                anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${play}&apikey=Beli`)
+                anu = await fetchJson(`https://tobz-api.herokuapp.com/api/joox?q=${body.slice(5)}&apikey=${tobzapi}`)
                 if (anu.error) return reply(anu.error)
                  infomp3 = `*Lagu Ditemukan!!!*\nJudul : ${anu.result.title}\nSource : ${anu.result.source}\nUkuran : ${anu.result.size}\n\n*TUNGGU SEBENTAR LAGI DIKIRIM MOHON JANGAN SPAM YA SAYANG*`
                 buffer = await getBuffer(anu.result.thumbnail)
@@ -1481,7 +1483,7 @@ async function starts() {
                 case 'rip':
                 if (!isOo) return reply(mess.only.user)
                 reply(mess.wait)
-                anu = await getBuffer(`https://api.zeks.xyz/api/rip?apikey=Beli&img=${body.slice(4)}`)
+                anu = await getBuffer(`https://api.zeks.xyz/api/rip?apikey=${apiy}&img=${body.slice(4)}`)
                 client.sendMessage(from, anu, image, {quoted: mek, caption: 'nih'})
                 break
                 case 'surah':
@@ -1621,7 +1623,7 @@ async function starts() {
                    hasil = `_[❗] Menurut Wekipedia_\n${anu.result}`
                   reply(hasil)
                   break 
-                 case 'wikie':
+                 case 'wiki':
                  if (!isOo) return reply(mess.only.user)
                  if (args.length < 1) return reply(`Yang Mau Om Tau apa?`)
                  reply(mess.wait)
@@ -1751,7 +1753,7 @@ async function starts() {
                 if (args.length < 1) return reply(`Maaf Text Nya mana Kak???`)
                 bob = body.slice(7)
                 reply(mess.wait)
-                anu = await fetchJson(`https://tobz-api.herokuapp.com/api/yta?url=${bob}&apikey=BotWeA`, {method: 'grt'})
+                anu = await fetchJson(`https://tobz-api.herokuapp.com/api/yta?url=${bob}&apikey=${tobzapi}`, {method: 'grt'})
                 buffgg = await getBuffer(anu.thumb)
                 buff = await getBuffer(anu.result)
                 teks = `*➥TITLE*:${anu.title}\n\n*➥SIZE*:${anu.filesize}\n\n\*Sedang Mendownload Mp3*`
@@ -1762,14 +1764,16 @@ async function starts() {
                 if (!isOo) return reply(mess.only.user)
                 if (args.length < 1) return reply(`Text Nya mana Om`)
                 reply(mess.wait)
-                ano = await fetchJson(`http://api-melodicxt.herokuapp.com/api/ssweb?url=${body.slice(7)}&apiKey=${apiy}`, {method: 'get'})
+                url = body.slice(1)
+                ano = await fetchJson(`https://tobz-api.herokuapp.com/api/screenshotweb?url=${body.slice(1)}&apikey=${tobzapi}`, {method: 'get'})
                 beb = await getBuffer(ano.result)
                 client.sendMessage(from, beb, image, {quoted: mek, caption: 'nih bang'})
                 break 
                 case 'apkpure':
                 if (!isOo) return reply(mess.only.user)
                 reply(mess.wait)
-                anu = await fetchJson(`https://api.zeks.xyz/api/apkpure?q=${body.slice(7)}&apikey=a`)
+                teks = body.slice(7)
+                anu = await fetchJson(`https://api.zeks.xyz/api/apkpure?q=${body.slice(7)}&apikey=${apiy}`)
                 boppe = await getBuffer(anu.result.image)
                 teks = `*➥TITLE*:${anu.result.title}\n*➥DESCRIPTION*:${anu.result.description}\n*➥DEVELOPER*:${anu.result.detail_author}\n*➥SPEK*:${anu.result.detail_sdk}\n\n\n\n*Link*:${anu.result.download_link}`
                 client.sendMessage(from, boppe, image, {quoted: mek, caption: teks})
@@ -1842,9 +1846,10 @@ async function starts() {
         if (!isOo) return reply(mess.only.user)
         if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
         reply(mess.wait)
+        cont = body.slice(9)
         const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 	    media = await client.downloadMediaMessage(encmedia)
-        anu = await getBuffer(`https://api.zeks.xyz/api/triger?apikey=You Api&img=${body.slice(9)}`)
+        anu = await getBuffer(`https://api.zeks.xyz/api/triger?apikey=${apiy}&img=${body.slice(9)}`)
         client.sendMessage(from, anu, gif, {quoted: mek})
         } else {
         	reply(`gambar om`)
@@ -1863,7 +1868,7 @@ async function starts() {
         if (!isOo) return reply(mess.only.user)
         kbb = body.slice(5)
         reply(mess.wait)
-        anu = await fetchJson (`https://mhankbarbar.tech/api/kbbi?query=${kbb}&lang=id&apiKey=${mhankaipi}`, {method: 'get'})
+        anu = await fetchJson (`https://tobz-api.herokuapp.com/api/kbbi?kata=${body.slice(5)}&apikey=${tobzapi}`, {method: 'get'})
         teks = `*[❗] Menurut Kamus Kbbi*\n\n*${anu.result}*`
         reply(teks)
         break 
