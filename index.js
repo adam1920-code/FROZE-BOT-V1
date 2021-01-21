@@ -1166,7 +1166,7 @@ async function starts() {
                 case 'pubglogo':
                  reply(mess.wait)
                  if (!isOo) return reply(mess.only.user)
-                 anu = await fetchJson(`https://tobz-api.herokuapp.com/api/photooxy?theme=pubg&text1=${body.slice(9)}&text2=ByArugaz&apikey=${tobzapi}`)
+                 anu = await fetchJson(`https://tobz-api.herokuapp.com/api/photooxy?theme=pubg&text1=${body.slice(9)}&text2=${gh)}&apikey=${tobzapi}`)
                  buff = await getBuffer(anu.result)
                  client.sendMessage(from, buff, image, {quoted: mek, caption: '*Api Key From Tobz*'})
                  break 
