@@ -39,9 +39,9 @@ const time = moment.tz('Asia/Jakarta').format('DD/MM HH:mm:ss')
 const {vip} = require('./vipmenu/vip')
 const vcard = 'BEGIN:VCARD\n'
             + 'VERSION:3.0\n' // Versi Bot Kamu
-            + 'FN:Mr.Virtex\n' // Nama kamu
-            + 'ORG:FROZEBO%;\n' // Nama bot
-            + 'TEL;type=CELL;type=VOICE;waid=6281539336834:+62 815-3933-6834\n' //Nomor whatsapp kamu
+            + 'FN:Adam Oey19\n' // Nama kamu
+            + 'ORG:Yeongsill Bot;\n' // Nama bot
+            + 'TEL;type=CELL;type=VOICE;waid=6283153843600:+62 831-5384-3600\n' //Nomor whatsapp kamu
             + 'END:VCARD'
 prefix = '!' // prefix bot kamu
 blocked = []
@@ -161,12 +161,12 @@ async function starts() {
 			}
 
 			const botNumber = client.user.jid
-			const ownerNumber = ["6281539336834@s.whatsapp.net"] // Nomor Kamu 
-            const vipNumber = ["6281539336834@s.whatsapp.net"] // jangan di ubah su
+			const ownerNumber = ["6283153843600@s.whatsapp.net"] // Nomor Kamu 
+            const vipNumber = ["6283153843600@s.whatsapp.net"] // jangan di ubah su
 			const isGroup = from.endsWith('@g.us')
 			const mhankaipi = 'Your' // api mhankbarbar kamu
-            const tobzapi = 'Your' // api tobz kamu
-            const apiy = 'Your' // api kamu 
+            const tobzapi = 'BotWeA' // api tobz kamu
+            const apiy = 'apivinz' // api kamu 
 			const sender = isGroup ? mek.participant : mek.key.remoteJid
 			const groupMetadata = isGroup ? await client.groupMetadata(from) : ''
 			const groupName = isGroup ? groupMetadata.subject : ''
@@ -495,8 +495,9 @@ async function starts() {
                case 'joox':
                reply(mess.wait)
                if (!isOo) return reply(mess.only.user)
+               if (!isVip) return reply(`*[❗] Fitur Ini Hanya Untuk User Premium*`)
 				if (args.length < 1) return reply('Nama lagunya apa kak?')
-                    anu = await fetchJson(`https://tobz-api.herokuapp.com/api/joox?q=${body.slice(7)}&apikey=${tobzapi}`, {method: 'get'})
+                    anu = await fetchJson(`https://tobz-api.herokuapp.com/api/joox?q=${body.slice(7)}&apikey=${BotWeA}`, {method: 'get'})
                     buffter = await getBuffer(anu.result.thumb)
                     teks = `*➥ALBUM*:${anu.result.album}\n*➥UPLOAD*:${anu.result.dipublikasi}\n*➥JUDUL*:${anu.result.judul}\n\n\n Sedang Mendownload Lagu`
                     client.sendMessage(from, buffter, image, {quoted: mek, caption: teks})
@@ -508,7 +509,7 @@ async function starts() {
 			     if (args.length < 1) return reply(`❎Text Nya Mana Om❎`)
 			     sus = body.slice(7)
 			     reply(mess.wait)
-			     anu = await fetchJson(`https://tobz-api.herokuapp.com/api/lirik?q=${sus}&apikey=${tobzapi}`, {method: 'get'})
+			     anu = await fetchJson(`https://tobz-api.herokuapp.com/api/lirik?q=${sus}&apikey=${BotWeA}`, {method: 'get'})
 			     teks = `${anu.result.lirik}`
 			     reply(teks)
 			     break
@@ -1172,7 +1173,7 @@ async function starts() {
                 case 'mod':
                 if (!isOo) return reply(mess.only.user)
                  reply(mess.wait)
-                 anu = await fetchJson(`https://tobz-api.herokuapp.com/api/moddroid?q=${body.slice(7)}&apikey=${tobazapi}`, {method: 'get'})
+                 anu = await fetchJson(`https://tobz-api.herokuapp.com/api/moddroid?q=${body.slice(7)}&apikey=${BotWeA}`, {method: 'get'})
                  teks = `*TiITLE*:${anu.title}\n*GENRE*:${anu.genre}\n*VERSION*:${anu.latest_version}\n*SIZE*:${anu.size}\n*PUBLISHED*:${anu.publisher}\n\n\n\n*LINK*:${anu.download}`
                  reply(teks)
 				case 'url2img':
