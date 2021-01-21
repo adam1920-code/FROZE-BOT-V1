@@ -1165,13 +1165,6 @@ async function starts() {
                 anu = await fetchJson(`https://tobz-api.herokuapp.com/api/bitly?url=${body.slice(7)}&apikey=${tobzapi}`, {method: 'get'})
                 reply(anu.result)
                 break
-                case 'pubglogo':
-                 reply(mess.wait)
-                 if (!isOo) return reply(mess.only.user)
-                 anu = await fetchJson(`https://tobz-api.herokuapp.com/api/photooxy?theme=pubg&text1=${body.slice(9)}&text2=YEONGSILL BOT&apikey=${tobzapi}`)
-                 buff = await getBuffer(anu.result)
-                 client.sendMessage(from, buff, image, {quoted: mek, caption: '*Api Key From Tobz*'})
-                 break 
                 case 'mod':
                 if (!isOo) return reply(mess.only.user)
                  reply(mess.wait)
