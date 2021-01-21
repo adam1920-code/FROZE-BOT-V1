@@ -1,6 +1,6 @@
 const help = (prefix) => {
 	return ` 
-╔══☾❣️ FROZE BOT V1❣️☽═
+╔══☾❣️ YEONGSILL BOT ❣️☽═
 ║❥ *->${prefix}loli*
 ║❥ *->${prefix}speed*
 ║❥ *->${prefix}getses*
@@ -90,13 +90,13 @@ const help = (prefix) => {
 ╚══☾❣️ FROZE BOT ❣️☽═
 *📢:BOT Tidak Berjalan 24Jam*
 *📢:Bot On Tergantung Owner*
-*❗:Script Free*
 ======================
 _*Special Thaks To*_
-_mhankbarbar_
-_arugaz_
-_XPNT_
-_Allah Swt_
+ *ALLAH SWT*
+ *KEDUA ORANG TUA*
+ *HP SENDIR*
+ *DIRI SENDIRI*
+ *TEMEN YANG GAK TAU DIRI*
 =======================
 ┌─*☾CHANGLOG☽*─┐
 *➥New Ui*
@@ -108,7 +108,7 @@ _Allah Swt_
 
 *Beri Jeda 5 Detik Command!!!*
 
-*[MADE BY 🥶BOT FROZE🥶]*`
+*[MADE BY 🥶ADAM OEY19🥶]*`
 }
 
 exports.help = help
