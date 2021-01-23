@@ -397,14 +397,7 @@ if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
 			    tekspn = `*➥Size*:${anu1.result.filesizeF}\n*➥TITLE*:${anu1.result.title}\n\n\n\n\n _Sedang Mendownload Mp3_`
 			   client.sendMessage(from, bufft, image, {quoted: mek, caption: tekspn})
 			   client.sendMessage(from, bufflin, audio, {mimetype: 'audio/mp4', quoted: mek})
-			   er':
-if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
-			  if (!isOo) return reply(mess.only.user)
-			  reply(`[❗] Wait`)
-			  anu = await fetchJson(`http://api-melodicxt.herokuapp.com/api/random/wallpaper?apiKey=${apiy}`)
-			  buff = await getBuffer(anu.data.result)
-			  client.sendMessage(from, buff, image, {quoted: mek})
-			break
+			  break
 		      case 'happymod':
 if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
 		      if (!isOo) return reply(mess.only.user)
