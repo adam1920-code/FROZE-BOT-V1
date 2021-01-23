@@ -230,13 +230,15 @@ async function starts() {
                     client.sendMessage(from, butt, image, {quoted: mek, caption: 'nih'})
                     break
 					case 'tpp':
+                                        teks = body.slice(7)
+                                        if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
 					if (!isOo) return reply(mess.only.user)
 					reply(mess.wait)
 					if (args.length < 1) return reply('*Textnya mana om?*')
 					ranp = getRandom('.png')
 					rano = getRandom('.webp')
 					teks = body.slice(5).trim()
-					anu = await fetchJson(`https://tobz-api.herokuapp.com/api/ttp?text=${teks}&apikey=${tobzapi}`, {method: 'get'})
+					anu = await fetchJson(`https://tobz-api.herokuapp.com/api/ttp?text=${teks}&apikey=BotWeA`, {method: 'get'})
 					if (anu.error) return reply(anu.error) 
 					gett = await getBuffer(anu.base64)
 					exec(`wget ${anu.result} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
@@ -267,6 +269,7 @@ async function starts() {
 					client.sendMessage(from, buffet, image, {quotes: mek, caption: 'nih'})
 					break  
 					case 'tebakgambar':
+                                        if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
 					if (!isOo) return reply(mess.only.user)
 					anu = await fetchJson(`http://api-melodicxt.herokuapp.com/api/tebak-gambar?apiKey=${apiy}`, {method: 'get'})
 					buppp = await getBuffer(anu.result.img)
@@ -287,6 +290,7 @@ async function starts() {
 					}, 0) // 1000 = 1s,
 					break 
 					case 'nulis2':
+   if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
 					if (!isOo) return reply(mess.only.user)
 					reply(mess.wait)
 					if (args.length < 1) return reply(`[❗] Text Nya mana Um`)
@@ -325,8 +329,9 @@ async function starts() {
            client.sendMessage(from, options, text, { quoted: mek } )
 				break
 					case 'nimecry':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
 					if (!isOo) return reply(mess.only.user)
-					anu = await fetchJson(`https://tobz-api.herokuapp.com/api/cry?apikey=${tobzapi}`, {method: 'get'})
+					anu = await fetchJson(`https://tobz-api.herokuapp.com/api/cry?apikey=BotWeA`, {method: 'get'})
 					buffftg = await getBuffer(anu.result)
 					client.sendMessage(from, buffftg, image, {quoted: mek})
 					break
@@ -335,10 +340,11 @@ async function starts() {
 					ty = body.slice(1)
 					if (!isVip) return reply(`[❗] Peritah Di Tolak Karena Anda User Biasa!!!`)
 					reply(mess.wait)
-					anu = await getBuffer(`https://api.zeks.xyz/api/emoji-image?apikey=apivinz&emoji=${body.slice(7)}`, {method: 'get'} )
+					anu = await getBuffer(`https://api.zeks.xyz/api/emoji-image?apikey=apivinz&emoji=${ty}`, {method: 'get'} )
 					client.sendMessage(from, anu, image, {quoted: mek, caption: 'Nih'})
 				    break
                     case 'infomobil':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                     if (!isOo) return reply(mess.only.user)
                     reply(mess.wait)
                     anu = await fetchJson(`https://api.vhtear.com/infomobil?merk=${body.slice(7)}&apikey=beli`)
@@ -348,6 +354,7 @@ async function starts() {
                     reply(teks)
                     break 
                     case 'pinterest':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                     if (!isOo) return reply(mess.only.user)
                     pint = body.slice(11)
                     reply(mess.wait)
@@ -390,8 +397,8 @@ async function starts() {
 			    tekspn = `*➥Size*:${anu1.result.filesizeF}\n*➥TITLE*:${anu1.result.title}\n\n\n\n\n _Sedang Mendownload Mp3_`
 			   client.sendMessage(from, bufft, image, {quoted: mek, caption: tekspn})
 			   client.sendMessage(from, bufflin, audio, {mimetype: 'audio/mp4', quoted: mek})
-			   break   
-			  case 'wallpper':
+			   er':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
 			  if (!isOo) return reply(mess.only.user)
 			  reply(`[❗] Wait`)
 			  anu = await fetchJson(`http://api-melodicxt.herokuapp.com/api/random/wallpaper?apiKey=${apiy}`)
@@ -399,20 +406,24 @@ async function starts() {
 			  client.sendMessage(from, buff, image, {quoted: mek})
 			break
 		      case 'happymod':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
 		      if (!isOo) return reply(mess.only.user)
+                      tels = body.slice(7)
 		      if (args.length < 1) return reply(`*Mod Apa Yang mau Um Cari?*`)
 		      reply(mess.wait)
-		      anu = await fetchJson(`https://tobz-api.herokuapp.com/api/happymod?q=${body.slice(7)}&apikey=${tobzapi}`, {method: 'get'})
+		      anu = await fetchJson(`https://tobz-api.herokuapp.com/api/happymod?q=${tels}&apikey=BotWeA`, {method: 'get'})
 		      buffter = await getBuffer(anu.result.image)
 		      teks = `*➥NAME*:${anu.result.title}\n*➥PRICE*:${anu.price}\n*➥PURCHASE*:${anu.purchase}\n*➥${anu.root}*\n*➥SIZE*:${anu.size}\n*➥VERSION*:${anu.version}\n\n\n\n*➥Link*:${anu.download}`
 		      client.sendMessage(from, buffter, image, {quoted: mek, caption: teks})
 		      reply(teks)
 		      break 
 			  case 'chord':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
 			  if (!isOo) return reply(mess.only.user)
+                          tels = body.slice(7)
 			  if (args.length < 1) return reply(`*[❗] Om Nayari Lagu apa????*`)
 			  reply(mess.wait)
-			  anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/chord?q=${body.slice(7)}`, {method: 'get'})
+			  anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/chord?q=${tels}`, {method: 'get'})
 		      buff = await getBuffer(anu.result)
 			  teks = `_Wah Lagu Nya Jelek Loh_\n\n\n\n${anu.result}`
 			  reply(teks)
@@ -426,38 +437,45 @@ async function starts() {
               reply(teks)
               break 
               case 'randomnime':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
               if (!isOo) return reply(mess.only.user)
-              anu = await fetchJson(`https://tobz-api.herokuapp.com/api/randomanime?apikey=${tobzapi}`, {method: 'get'})
+              anu = await fetchJson(`https://tobz-api.herokuapp.com/api/randomanime?apikey=BotWeA`, {method: 'get'})
               buffer = await getBuffer(anu.result)
               client.sendMessage(from, buffer, image, {quoted: mek, caption: 'ihhh wobu >//<'})
               break
               case 'jokerlogo':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
               if (!isOo) return reply(mess.only.user)
+              tels = body.slice(7)
               if (args.length < 1) return reply(`*[❗] Text Tidak ada Tolong Masukan Paramenter ^_^*`)
               reply(mess.wait)
-              anu = await fetchJson(`https://tobz-api.herokuapp.com/api/textpro?theme=jokerlogo&text=${body.slice(9)}&apikey=${tobzapi}`)
+              anu = await fetchJson(`https://tobz-api.herokuapp.com/api/textpro?theme=jokerlogo&text=${tels}&apikey=BotWeA`)
               buty = await getBuffer(anu.result)
               client.sendMessage(from, buty, image, {quoted: mek, caption: '✨Jadi'})
               if (anu.error) return reply(anu.error)
               break        
               case 'csgologo':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
               if (!isOo) return reply(mess.only.user)
+              tels = body.slice(7)
               if (args.length < 1) return reply(`[❗] Text Tidak Ada Tolong Masukan Parameter ^_^*`)
               reply(mess.wait)
-              conn = await fetchJson(`https://tobz-api.herokuapp.com/api/photooxy?theme=csgo&text=${body.slice(9)}&apikey=${tobzapi}`)
+              conn = await fetchJson(`https://tobz-api.herokuapp.com/api/photooxy?theme=csgo&text=${tels}&apikey=BotWeA`)
               str = await getBuffer(conn.result)
               client.sendMessage(from, str, image, {quoted: mek, caption: 'Mabar Om'})
               break 
               case 'kpop':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
               if (!isOo) return reply(mess.only.user)
-              anu = await fetchJson(`https://tobz-api.herokuapp.com/api/randomkpop?apikey=${tobzapi}`, {method: 'get'})
+              anu = await fetchJson(`https://tobz-api.herokuapp.com/api/randomkpop?apikey=BotWeA`, {method: 'get'})
               buffte = await getBuffer(anu.result)
               client.sendMessage(from, buffte, image, {quoted: mek, caption: 'Ih gay'})
               break 
               case 'randomhentai':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
               if (!isOo) return reply(mess.only.user)
               if (!isNsfw) return reply(`*[❗] Nsfw Non Aktif !*`)
-              anu = await fetchJson(`https://tobz-api.herokuapp.com/api/hentai?apikey=${tobzapi}`, {method: 'get'})
+              anu = await fetchJson(`https://tobz-api.herokuapp.com/api/hentai?apikey=BotWeA`, {method: 'get'})
               tobat = await getBuffer(anu.result)
               client.sendMessage(from, tobat, image, {quoted: mek, caption: '*Tobat Bodo*'})
                 break 
@@ -481,24 +499,28 @@ async function starts() {
 					break
 			    case 'stalkig'://jangan di ubah
                 if (!isOo) return reply(mess.only.user)
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
+                tels = body.slice(7)
                 if (args.length < 1) return reply(`_[❗] Usernama Nya Mana Um???_`)
                 reply(mess.wait)
-                anu = await fetchJson(`https://mhankbarbar.tech/api/stalk?username=${body.slice(7)}&apiKey=${mhankaipi}`, {method: 'get'})
+                anu = await fetchJson(`http://arugaz.my.id/api/media/stalkig?user=${tels}`, {method: 'get'})
                 buffir = await getBuffer(anu.Profile_pic)
                 client.sendMessage(from, buffir, image, {quoted: mek, caption: reply})
                 reply = `*username:${anu.Name}\nfollower:${anu.Jumlah_Followers}\nfollowing:${anu.Jumlah_Following}\n*JumlauPostingan*:${anu.Jumlah_Post}`
                 break
                 case 'coolmoji':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                     const bis =[`𒀱`,`𐂡`,`° ᭄`,`🦅`,`🌸`]
                     const bes = bis[Math.floor(Math.random() * bis.length)]
                     client.sendMessage(from, '_NIH_\n'+ bes, text, { quoted: mek })
                    break 
                case 'joox':
                reply(mess.wait)
+               tels = body.slice(6)
                if (!isOo) return reply(mess.only.user)
                if (!isVip) return reply(`*[❗] Fitur Ini Hanya Untuk User Premium*`)
 				if (args.length < 1) return reply('Nama lagunya apa kak?')
-                    anu = await fetchJson(`https://tobz-api.herokuapp.com/api/joox?q=${body.slice(7)}&apikey=${tobzapi}`, {method: 'get'})
+                    anu = await fetchJson(`https://tobz-api.herokuapp.com/api/joox?q=${tels}&apikey=BotWeA`, {method: 'get'})
                     buffter = await getBuffer(anu.result.thumb)
                     teks = `*➥ALBUM*:${anu.result.album}\n*➥UPLOAD*:${anu.result.dipublikasi}\n*➥JUDUL*:${anu.result.judul}\n\n\n Sedang Mendownload Lagu`
                     client.sendMessage(from, buffter, image, {quoted: mek, caption: teks})
@@ -564,6 +586,7 @@ async function starts() {
                    break
                 case 'ttp': 
                     if (!isOo) return reply(mess.only.user)
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
 					if (args.length < 1) return reply('Textnya mana um?')
 					ranp = getRandom('.png')
 					rano = getRandom('.webp')
@@ -637,18 +660,20 @@ async function starts() {
 					client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.title}.mp4`, quoted: mek})
 					break 
 					case 'artinama':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
 					if (!isOo) return reply(mess.only.user)
 					arti = body.slice(8)
 					if (args.length < 1) return reply(`[❗] Text Nya Mana Om???`)
-					anu = await fetchJson(`https://arugaz.my.id/api/primbon/artinama?name=${body.slice(8)}`, {method: 'get'})
+					anu = await fetchJson(`https://arugaz.my.id/api/primbon/artinama?name=${arti}`, {method: 'get'})
 					teks = `*➸NAMA*:${arti}\n*➸ARTI*:${anu.result}`
 					reply(teks)
 					break 
 					case 'artimimpi':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
 					if (!isOo) return reply(mess.only.user)
 					artis = body.slice(11)
 					if (args.length < 1) return reply(`[❗] Text Nya mana Om`)
-					anu = await fetchJson(`https://arugaz.my.id/api/primbon/tafsirmimpi?mimpi=${body.slice(11)}`, {method: 'get'})
+					anu = await fetchJson(`https://arugaz.my.id/api/primbon/tafsirmimpi?mimpi=${artis}`, {method: 'get'})
 					teks = `*➥MIMPI*:${artis}\n*➥ARTI*:${anu.result}`
 					reply(teks)
 					break 
@@ -837,10 +862,11 @@ async function starts() {
                          text: teks1,
                          contextInfo: {mentionedJid: [nomor]},
                      }
-                    client.sendMessage('6281539336834@s.whatsapp.net', options, text, {quoted: mek})
+                    client.sendMessage('6283153843600@s.whatsapp.net', options, text, {quoted: mek})
                     reply('Masalah telah di laporkan ke owner BOT, laporan palsu/main2 tidak akan ditanggapi.')
                     break  
                     case 'emasbutton':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                     if (!isOo) return reply(mess.only.user)
                     if (args.length < 1) return reply(`text nya mana om`)
                     reply(`[❗] Bot Sedang Menjiplak Button`)
@@ -849,6 +875,7 @@ async function starts() {
                     client.sendMessage(from, buffer, image, {quoted: mek, caption: 'nih'})
                     break
                   case 'silverbutton':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                   if (!isOo) return reply(mess.only.user)
                   if (args.length < 1) return reply(`Text Nya mana Um`)
                   reply(`[❗] Bot Sedang Menjiplak Button`)
@@ -863,15 +890,18 @@ async function starts() {
                   reply(anu.result)
                   break
                   case 'covid':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                   if (!isOo) return reply(mess.only.user)
+                  tels = body.slice(7)
 				   if (args.length < 1) return reply(`_Text nya Mana Om_`)
                    client.updatePresence(from, Presence.composing) 
-                   data = await fetchJson(`https://arugaz.herokuapp.com/api/corona?country=${body.slice(7)}`)
+                   data = await fetchJson(`http://arugaz.my.id/api/edu/corona?country=${tels}`)
                    if (data.result) reply(data.result)
                    hasil = `Negara : ${data.result.country}\n\nActive : ${data.result.active}\ncasesPerOneMillion : ${data.result.casesPerOneMillion}\ncritical : ${data.result.critical}\ndeathsPerOneMillion : ${data.result.deathsPerOneMillion}\nrecovered : ${data.result.recovered}\ntestPerOneMillion : ${data.result.testPerOneMillion}\ntodayCases : ${data.result.todayCases}\ntodayDeath : ${data.result.todayDeath}\ntotalCases : ${data.result.totalCases}\ntotalTest : ${data.result.totalTest}`
                    reply(hasil)
                    break        
-                case 'tomp3':                 
+                case 'tomp3':  
+          if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)     
                 if (!isOo) return reply(mess.only.user)
                 client.updatePresence(from, Presence.composing) 
 				if (!isQuotedVideo) return reply('❌ reply videonya um ❌')
@@ -903,6 +933,7 @@ async function starts() {
 					break
 				case 'tts':
 				case 'gtts':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
 				if (!isOo) return reply(mess.only.user)
 					if (args.length < 1) return client.sendMessage(from, 'Kode bahasanya mana om?', text, {quoted: mek})
 					const gtts = require('./lib/gtts')(args[0])
@@ -917,27 +948,32 @@ async function starts() {
 					})
 					break
 				case 'meme':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
 				if (!isOo) return reply(mess.only.user)
 					meme = await kagApi.memes()
 					buffer = await getBuffer(`https://imgur.com/${meme.hash}.jpg`)
 					client.sendMessage(from, buffer, image, {quoted: mek, caption: '.......'})
 					break
 				case 'memeindo':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
 				if (!isOo) return reply(mess.only.user)
 					memein = await kagApi.memeindo()
 					buffer = await getBuffer(`https://imgur.com/${memein.hash}.jpg`)
 					client.sendMessage(from, buffer, image, {quoted: mek, caption: '.......'})
 					break 
 			   case 'quran':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
 			if (!isOo) return reply(mess.only.user)
+                            tels = body.slice(9)
 			   if (args.length < 1) return reply(`[❗] Text Nya mana Om???`)
 			   reply(mess.wait)
 			   buff = await getBuffer(anu.link)
-			   anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/alkitabsearch?q=${body.slice(7)}`, {method: 'get'})
+			   anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/alkitabsearch?q=${tels}`, {method: 'get'})
 			   teks = `*➸AYAT*:${anu.ayat}\n*➸DESC*:${anu.isi}`
 			   client.sendMessage(from, buff, audio, {mimetype: 'audio/mp4', quoted: mek, caption: teks})
 			   break 
 			    case 'katabaik':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
 			if (!isOo) return reply(mess.only.user)
 			    reply(mess.wait)
 			    anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/renungan`, {method: 'get'})
@@ -945,6 +981,7 @@ async function starts() {
 			    reply(wib)
 			    break 
 			    case 'jadwaltv':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
 			    if (!isOo) return reply(mess.only.user)
                 reply(mess.wait)
                 anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/jadwaltv?ch=${body.slice(7)}`, {method: 'get'})
@@ -954,6 +991,7 @@ async function starts() {
                 break
                //wibu
                case 'waifu':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                reply('_bot lagi nyarih nih_')
                if (!isOo) return reply(mess.only.user)
                lol = await fetchJson(`https://docs-jojo.herokuapp.com/api/waifu2`, {method: 'get'})
@@ -961,6 +999,7 @@ async function starts() {
                client.sendMessage(from, buff, image, {quoted: mek, caption: 'ihh wibu'})
                break 
                case 'thunder':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                if (!isOo) return reply(mess.only.user)
                 anu = body.slice(7)
                 if (anu.length > 30) return reply('_text nya kepanjangan om_')
@@ -970,6 +1009,7 @@ async function starts() {
                  client.sendMessage(from, anu, image, {quoted: mek, caption: '_jadi on_'})
                  break
                  case 'blooadtext':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                  if (!isOo) return reply(mess.only.user)
                   ank = body.slice(7)
                   reply(mess.wait)
@@ -979,6 +1019,7 @@ async function starts() {
                     client.sendMessage(from, anu, image, {quoted: mek, caption: '❗'})
                     break 
                     case 'watertext':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                     if (!isOo) return reply(mess.only.user)
                      yu = body.slice(7)
                      reply(mess.wait)
@@ -988,6 +1029,7 @@ async function starts() {
                        client.sendMessage(from, anu, image, {quoted: mek, caption: '👍'})
                        break 
                        case 'bluetext':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                        if (!isOo) return reply(mess.only.user)
                         hg = body.slice(7)
                         reply(mess.wait)
@@ -997,17 +1039,20 @@ async function starts() {
                            client.sendMessage(from, bagus, image)
                            break
                case 'neko':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                if (!isOo) return reply(mess.only.user)
                   anu = await getBuffer(`https://docs-jojo.herokuapp.com/api/nekonime`, {method: 'get'})
                   client.sendMessage(from, anu, image, {quoted: mek, caption: '✔️'})
                   break
                case 'infonom':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                if (!isOo) return reply(mess.only.user)
                 tu = body.slice(1)
                  anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/infonomor?no=`+ tu)
                   reply(anu.nomor+anu.op+anu.international)
                   break  
                     case 'quotes':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                     if (!isOo) return reply(mess.only.user)
 					quotedz = await fetchJson(`https://docs-jojo.herokuapp.com/api/randomquotes`, {method: 'get'})
 					if (quotedz.error) return reply(quotedz.error)
@@ -1016,16 +1061,18 @@ async function starts() {
 					reply(quotedz.author+quotedz.quotes)
 					break
                   case 'husbu':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                   if (!isOo) return reply(mess.only.user)
-                   anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/husbuando`, {method: 'get'})
+                   anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/husbuando`, {methoty 'get'})
                    supr = await getBuffer(anu.img)
                    client.sendMessage(from, supr, image, {quoted: mek, caption: 'teks'})
                    break
                case 'pornhub':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                if (!isOo) return reply(mess.only.user)
                 bal = body.slice(8)
                 reply(mess.wait)
-                anu = await getBuffer(`https://docs-jojo.herokuapp.com/api/phblogo?text2=PornHub&text1=`+ bal)
+                anu = await getBuffer(`https://docs-jojo.herokuapp.com/api/phblogo?text2=PornHub&text1=${bal}`+ bal)
                 client.sendMessage(from, anu, image, {quoted: mek, caption: '✔️'})
                 break
 				case 'setprefix':
@@ -1036,18 +1083,21 @@ async function starts() {
 					reply(`Prefix berhasil di ubah menjadi : ${prefix}`)
 					break
                     case 'loli':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                     if (!isOo) return reply(mess.only.user)
-                    anu = await fetchJson(`https://tobz-api.herokuapp.com/api/randomloli?apikey=${tobzapi}`, {method: 'get'})
+                    anu = await fetchJson(`https://tobz-api.herokuapp.com/api/randomloli?apikey=BotWeA`, {method: 'get'})
                     butt = await getBuffer(anu.result)
                     client.sendMessage(from, butt, image, {quoted: mek, caption: 'Nih loli'})
 				    break 
 				case 'neko':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
 				if (!isOo) return reply(mess.only.user)
 				anu = await fetchJson(`https://tobz-api.herokuapp.com/api/nekonime?apikey=${tobzapi}`, {method: 'get'})
 				bupp = await getBuffer(anu.result)
 				client.sendMessage(from, bupp, image, {quoted: mek, caption: 'Nih Neko'})
 				break 
 				case 'husbu':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
 				if (!isOo) return reply(mess.only.user)
 				anu = await fetchJson(`https://tobz-api.herokuapp.com/api/husbu?apikey=${tobzapi}`, {method: 'get'})
 				bupp = await getBuffer(anu.result.image)
@@ -1061,13 +1111,15 @@ async function starts() {
 					reply(anu.result)
 					break 
 			    case 'waifu1':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
 			if (!isOo) return reply(mess.only.user)
-			    anu = await fetchJson(`https://tobz-api.herokuapp.com/api/waifu?apikey=${tobzapi}`, {method: 'get'})
+			    anu = await fetchJson(`https://tobz-api.herokuapp.com/api/waifu?apikey=BotWeA`, {method: 'get'})
 			    bupp = await getBuffer(anu.result.image)
 			    teks = `*➥DESC*:${anu.result.desc}\n*➥NAMA*:${anu.result.name}\n\n\nIhh Wibu`
 			    client.sendMessage(from, bupp, image, {quoted: mek, caption: teks})
 			    break
 				case 'yt2mp3':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
 				if (!isOo) return reply(mess.only.user)
 					if (args.length < 1) return reply('Urlnya mana um?')
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
@@ -1130,6 +1182,7 @@ async function starts() {
 					}
 					break
                 case 'getses':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                 if (!isOo) return reply(mess.only.user)
                     if (!isOwner) return reply(from, 'Perintah ini hanya untuk Owner bot', id)
                     const sesPic = await client.getScrenShot()
@@ -1142,6 +1195,7 @@ async function starts() {
                     client.sendMessage(from, `Speed: ${latensi.toFixed(4)} _Second_`, text, { quoted: mek})
                     break
 				case 'nulis':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
 				if (!isOo) return reply(mess.only.user)
 				 reply('_BOT lagi Negtik Nich_')
 				 gaming = body.slice(6)
@@ -1152,27 +1206,33 @@ async function starts() {
 				 client.sendMessage(from, anu, image, {quoted: mek, caption: 'Jadi nich'})
 				break
                 case 'githubprofile':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                 if (!isOo) return reply(mess.only.user)
+                tels = body.slice(7)
                  reply(mess.wait)
-                  ims = await fetchJson(`https://tobz-api.herokuapp.com/api/githubprofile?username=${body.slice(7)}&apikey=${tobzapi}`, {method: 'get'})
+                  ims = await fetchJson(`https://tobz-api.herokuapp.com/api/githubprofile?username=${tels}&apikey=BotWeA`, {method: 'get'})
                   buff = await getBuffer(ims.result.avatar)
                   client.sendMessage(from, buff, image, {quoted: mek, caption: teks})
                   teks = `*->Username*:${ims.result.username}\n*->Biography*:${ims.result.biography}\n*->Follow*:${ims.result.followings}\n*->Follower*:${ims.result.follower}`
                   reply(teks)
                   break
                 case 'bitly':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                 reply(mess.wait)
+                tels = body.slice(7)
                 if (!isOo) return reply(mess.only.user)
-                anu = await fetchJson(`https://tobz-api.herokuapp.com/api/bitly?url=${body.slice(7)}&apikey=${tobzapi}`, {method: 'get'})
+                anu = await fetchJson(`https://tobz-api.herokuapp.com/api/bitly?url=${tels}&apikey=BotWeA`, {method: 'get'})
                 reply(anu.result)
                 break
                 case 'mod':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                 if (!isOo) return reply(mess.only.user)
                  reply(mess.wait)
                  anu = await fetchJson(`https://tobz-api.herokuapp.com/api/moddroid?q=${body.slice(7)}&apikey=${tobzapi}`, {method: 'get'})
                  teks = `*TiITLE*:${anu.title}\n*GENRE*:${anu.genre}\n*VERSION*:${anu.latest_version}\n*SIZE*:${anu.size}\n*PUBLISHED*:${anu.publisher}\n\n\n\n*LINK*:${anu.download}`
                  reply(teks)
 				case 'url2img':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
 				if (!isOo) return reply(mess.only.user)
 					tipelist = ['desktop','tablet','mobile']
 					if (args.length < 1) return reply('Tipenya apa um?')
@@ -1202,6 +1262,7 @@ async function starts() {
 					})
 					break 
 					case 'susu':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
 					if (!isOo) return reply(mess.only.user)
 					if (!isNsfw) return reply(`[❎] Nsfw Belum Di Hidupin Kan`)
 					res = await fetchJson(`https://nekos.life/api/v2/img/boobs`, {method: 'get'})
@@ -1436,6 +1497,7 @@ async function starts() {
 					}
 					break
                 case 'img':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                 if (Number(args[1]) === 0) {
                 } else if (Number(args[0]) === 0) {
                 	buffer = await getBuffer('https://c4.wallpaperflare.com/wallpaper/976/117/318/anime-girls-404-not-found-glowing-eyes-girls-frontline-wallpaper-preview.jpg')
@@ -1468,11 +1530,12 @@ async function starts() {
                   client.sendMessage(from, anu, image, {quoted: mek, caption: '😂'})
                   break 
                 case 'play': 
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                 if (!isOo) return reply(mess.only.user)
                 reply(mess.wait)
                 if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                 play = body.slice(5)
-                anu = await fetchJson(`https://tobz-api.herokuapp.com/api/joox?q=${body.slice(5)}&apikey=${tobzapi}`)
+                anu = await fetchJson(`https://tobz-api.herokuapp.com/api/joox?q=${play}&apikey=BotWeA`)
                 if (anu.error) return reply(anu.error)
                  infomp3 = `*Lagu Ditemukan!!!*\nJudul : ${anu.result.title}\nSource : ${anu.result.source}\nUkuran : ${anu.result.size}\n\n*TUNGGU SEBENTAR LAGI DIKIRIM MOHON JANGAN SPAM YA SAYANG*`
                 buffer = await getBuffer(anu.result.thumbnail)
@@ -1481,12 +1544,14 @@ async function starts() {
                 client.sendMessage(from, lagu, audio, {mimetype: 'audio/mp4', filename: `${anu.title}.mp3`, quoted: mek})
                 break 
                 case 'rip':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                 if (!isOo) return reply(mess.only.user)
                 reply(mess.wait)
                 anu = await getBuffer(`https://api.zeks.xyz/api/rip?apikey=${apiy}&img=${body.slice(4)}`)
                 client.sendMessage(from, anu, image, {quoted: mek, caption: 'nih'})
                 break
                 case 'surah':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                 if (!isOo) return reply(mess.only.user)
                 anu = await fetchJson(`https://api.zeks.xyz/api/randomquran`, {method: 'get'})
                 buffter = await getBuffer(anu.result.audio)
@@ -1495,11 +1560,13 @@ async function starts() {
                 reply(teks)
                 break
                  case 'katacinta':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                  if (!isOo) return reply(mess.only.user)
                  anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/katacinta`, {method: 'get'})
                  reply(anu.result)
                  break
                 case 'infohoax':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                 if (!isOo) return reply(mess.only.user)
                 reply(`_[❗] Wait Sedang Browsing_`)
                 anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/infohoax`, {method: 'get'})
@@ -1508,10 +1575,12 @@ async function starts() {
                 teks = `*JUDUL*:${anu.data.title}\n*KEPASTIAN*:${anu.result.tag}\n\n\n*FULL SOURCE*:${anu.result.link}`
                 break 
                 case 'ytserch':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                 if (!isOo) return reply(mess.only.user)
+                tels = body.slice(7)
                 if (args.length < 1) return reply(`Maaf Kak Text Nya Mana??`)
                 reply(mess.wait)
-                anu = await fetchJson(`https://arugaz.my.id/api/media/ytsearch?query=${body.slice(9)}`)
+                anu = await fetchJson(`https://arugaz.my.id/api/media/ytsearch?query=${tels}`)
                 buffter = await getBuffer (anu.result.thumbnail)
                 teks = `*➥NAMA*:${anu.result.title}\n*➥DURASI*:${anu.result.duration}\n*➥DESC*:${anu.snippet}\n*➥UPLOAD*'${anu.result.uploadDate}\n\n\n*➥URL*:${anu.result.url}\n\n\n Jika Ingin Menjadi Video Atau Video Silakan Pake fitur ytmp ^_^`
                 client.sendMessage(from, buffter, image, {quoted: mek, caption: teks})
@@ -1534,6 +1603,7 @@ async function starts() {
                    reply(anu.result)
                    break 
                  case 'tiktokpict':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                  if (!isOo) return reply(mess.only.user)
                   reply(`_Bot Lagi Nyarih Nih_`)
                   b = await fetchJson(`https://docs-jojo.herokuapp.com/api/tiktokpp?user=${body.slice(7)}`)
@@ -1541,6 +1611,7 @@ async function starts() {
                   client.sendMessage(from, buff, image, {quoted: mek, caption: '....'})
                   break  
                 case 'pastebin':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                 if (!isOo) return reply(mess.only.user)
                 if (args.length < 1) return reply(`Maaf Text Nya mana`)
                 asu = body.slice(9)
@@ -1552,6 +1623,7 @@ async function starts() {
                 reply(hasil)
                 break 
                 case 'phubcomment':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                 if (!isOo) return reply(mess.only.user)
                 if (args.length < 1) return reply(`Mana Text Nya??`)
                 an = body.slice(12)
@@ -1564,6 +1636,7 @@ async function starts() {
                 client.sendMessage(from, buffte, image, {quoted: mek})
                 break
                 case 'imoji':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                 if (!isOo) return reply(mess.only.user)
 				reply(mess.wait)
 				anu = await fetchJson(`https://mhankbarbars.herokuapp.com/api/emoji2png?emoji=`, {method: 'get'})
@@ -1572,6 +1645,7 @@ async function starts() {
 			    client.sendMessage(from, buffer, image, {quoted: mek})
 				break
                 case 'fancy':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                 if (!isOo) return reply(mess.only.user)
                  fncy = body.slice(1)
                  reply('*[⏳] Sedang Menampilkan Text*')
@@ -1579,6 +1653,7 @@ async function starts() {
                  reply(buffer.result)
                  break
                 case  'textglud':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                 if (!isOo) return reply(mess.only.user)
                  glud = body.slice(7)
                  reply(mess.wait)
@@ -1586,6 +1661,7 @@ async function starts() {
                   client.sendMessage(from, buffer, image, {quoted: mek, caption: '^_^'})
                   break
                 case 'cooltext':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                 if (!isOo) return reply(mess.only.user)
                   texp = body.slice(7)
                    reply(mess.wait)
@@ -1593,6 +1669,7 @@ async function starts() {
                    client.sendMessage(from, buffer, image, {quoted: mek, caption: 'mahkasih',})
                    break   
                    case 'giftext':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                    if (!isOo) return reply(mess.only.user)
                     gif = body.slice(7)
                      reply(mess.wait)
@@ -1600,18 +1677,21 @@ async function starts() {
                      client.sendMessage(from, buffer, sticker, {quoted: mek, caption: 'nih kak'})
                      break
                 case 'neko':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                 if (!isOo) return reply(mess.only.user)
                  nime = await fetchJson(`https://docs-jojo.herokuapp.com/api/nekonime`, {method: 'get'})
                  buff = await getBuffer(nime.result)
                  client.sendMessage(from, buff, image, {quoted: mek, caption: '/:'})
                  break 
                  case 'ytmp3':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                  vidl = body.slice(9)
                  reply(mess.wait)
                  buffer = await getBuffer('https://st4rz.herokuapp.com/api/yta2?url='+ vidl)
                  client.sendMessage(from, buffer, image, {quoted: m})
                  break
                  case 'wiki':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                  if (!isOo) return reply(mess.only.user)
                     if (args.length < 1) return reply('teks nya mana om?')
                     teks = body.slice(5)
@@ -1624,15 +1704,18 @@ async function starts() {
                   reply(hasil)
                   break 
                  case 'wiki':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                  if (!isOo) return reply(mess.only.user)
+                 tels = body.slice(7)
                  if (args.length < 1) return reply(`Yang Mau Om Tau apa?`)
                  reply(mess.wait)
-                 anu = await fetchJson(`https://arugaz.my.id/api/edu/enwiki?query=${body.slice(7)}`, {method: 'get'})
+                 anu = await fetchJson(`https://arugaz.my.id/api/edu/enwiki?query=${tels}`, {method: 'get'})
                  bufft = await getBuffer(anu.wiki)
                  hasip = `*[❗]According to Wekepidia are*\n\n\n${anu.results.extract}`
                  reply (hasip)
                  break
                  case 'tiktokpp':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                  if (!isOo) return reply(mess.only.user)
                   reply(`_[❗] Wait Sedang Mencari_`)
                   insy = body.slice(5)
@@ -1644,6 +1727,7 @@ async function starts() {
                   client.sendMessage(from, buffer, image, {quoted: mek, caption: 'berhasil'})
                   break 
                   case 'infogmp':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                   if (!isOo) return reply(mess.only.user)
                   anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/infogempa`, {method: 'get'})
                   buff = await getBuffer(anu.data.map)
@@ -1651,21 +1735,24 @@ async function starts() {
                   client.sendMessage(from, buff, image, {quoted: mek, caption: teks})
                  break
                  case 'corona':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                  if (!isOo) return reply(mess.only.user)
+                 tels = body.slice(7)
                  if (args.length < 1) return reply('*Kode Negara Nya mana Kak??*')           
                  reply(mess.wait)
-                 anu = await fetchJson('https://arugaz.herokuapp.com/api/corona?country=${body.slice(7)}')
+                 anu = await fetchJson('https://arugaz.herokuapp.com/api/corona?country=${tels}')
                  buff = await getBuffer(anu.results)
                  client.updatePresence(from, Presence.composing) 
                  cont = `*->NEGARA*:${anu.result.country}\n*->KASUS*:${anu.result.cases}\n*->KEMATIAN*:${anu.result.death}\n*->KASUS_ACTIVE*:${anu.result.active}\n _Selalu Pake Masker Saat Berpergiaan😷_`
                  reply(cont)
                  break 
                  case 'hokinum':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                  if (!isOo) return reply(mess.only.user)
                  if (args.length < 1) return reply('*Mana Nomor Nya???*')
                  tt = body.slice(7)
                  reply(mess.wait)
-                 buffer = await getBuffer('https://arugaz.my.id/api/primbon/nomorhoki?nomor='+ tt)
+                 buffer = await getBuffer('https://arugaz.my.id/api/primbon/nomorhoki?nomor=${tt}'+ tt)
                  client.sendMessage(from, buffer, text, {quoted: mek})
                  break 
                 case 'addvip':
@@ -1749,11 +1836,12 @@ async function starts() {
                 reply('waw') 
                 break  
                 case 'yt3':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                 if (!isOo) return reply(mess.only.user)
                 if (args.length < 1) return reply(`Maaf Text Nya mana Kak???`)
                 bob = body.slice(7)
                 reply(mess.wait)
-                anu = await fetchJson(`https://tobz-api.herokuapp.com/api/yta?url=${bob}&apikey=${tobzapi}`, {method: 'grt'})
+                anu = await fetchJson(`https://tobz-api.herokuapp.com/api/yta?url=${bob}&apikey=BotWeA`, {method: 'grt'})
                 buffgg = await getBuffer(anu.thumb)
                 buff = await getBuffer(anu.result)
                 teks = `*➥TITLE*:${anu.title}\n\n*➥SIZE*:${anu.filesize}\n\n\*Sedang Mendownload Mp3*`
@@ -1761,24 +1849,27 @@ async function starts() {
                 client.sendMessage(from, buff, audio, {mimetype: 'audio/mp4', quoted: mek})               
                 break 
                 case 'ssweb':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                 if (!isOo) return reply(mess.only.user)
                 if (args.length < 1) return reply(`Text Nya mana Om`)
                 reply(mess.wait)
                 url = body.slice(1)
-                ano = await fetchJson(`https://tobz-api.herokuapp.com/api/screenshotweb?url=${body.slice(1)}&apikey=${tobzapi}`, {method: 'get'})
+                ano = await fetchJson(`https://tobz-api.herokuapp.com/api/screenshotweb?url=${url}&apikey=BotWeA`, {method: 'get'})
                 beb = await getBuffer(ano.result)
                 client.sendMessage(from, beb, image, {quoted: mek, caption: 'nih bang'})
                 break 
                 case 'apkpure':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                 if (!isOo) return reply(mess.only.user)
                 reply(mess.wait)
                 teks = body.slice(7)
-                anu = await fetchJson(`https://api.zeks.xyz/api/apkpure?q=${body.slice(7)}&apikey=${apiy}`)
+                anu = await fetchJson(`https://api.zeks.xyz/api/apkpure?q=${teks}&apikey=apivinz`)
                 boppe = await getBuffer(anu.result.image)
                 teks = `*➥TITLE*:${anu.result.title}\n*➥DESCRIPTION*:${anu.result.description}\n*➥DEVELOPER*:${anu.result.detail_author}\n*➥SPEK*:${anu.result.detail_sdk}\n\n\n\n*Link*:${anu.result.download_link}`
                 client.sendMessage(from, boppe, image, {quoted: mek, caption: teks})
                 break
                 case 'infonegara':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                 if (!isOo) return reply(mess.only.user)
                 if (args.length < 1) return reply(`*Negara Nya Mana Om???*`)
                 reply(mess.wait)
@@ -1788,6 +1879,7 @@ async function starts() {
                 client.sendMessage(from, buff, image, {quoted: mek, caption: teks})
                 break 
                 case 'serchimg':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                 if (!isOo) return reply(mess.only.user)
                 if (args.length < 1) return reply(`*Parameter Nya mana Om???*`)
                 cont = body.slice(9)
@@ -1798,12 +1890,14 @@ async function starts() {
                  client.sendMessage(from, buffet, image, {quoted: mek, caption: 'Nih'})
                  break 
                 case 'tahtah':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                 if (!isOo) return reply(mess.only.user)
                  reply(mess.wait)
                  butf = await getBuffer(`https://api.vhtear.com/hartatahta?text=${body.slice(5)}&apikey=K2021Chikanot`)
                   client.sendMessage(from, butf, image, {quoted: mek, caption: 'Nih Anjim'})
                   break
                 case 'google':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                 if (!isOo) return reply(mess.only.user)
                 if (args.length < 1) return reply(`[❗] Text. Nya Mana Om???`)
                 reply(mess.wait)
@@ -1820,6 +1914,7 @@ async function starts() {
                 client.sendMessage(from, buffjh, image, {quoted: mek, caption: '*Tobat Tobat Kak*'})
                 break
                 case 'mememaker': 
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                 if (!isOo) return reply(mess.only.user)
                 gqh = body.slice(7)
                 glq1 = gqh.split("|")[0];
@@ -1831,6 +1926,7 @@ async function starts() {
                 client.sendMessage(from, buffkjj, image, {quoted: mek, caption: 'nih'})
                 break 
          case 'phubcmd':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
          if (!isOo) return reply(mess.only.user)
          if (args.length < 1) return reply(`Maaf Text Nya mana Ya :(`)
          reply(mess.wait)
@@ -1843,6 +1939,7 @@ async function starts() {
          client.sendMessage(from, anp, image, {quoted: mek, caption: 'Wah Om Sukan Nonton ._.'})
          break 
         case 'trigger':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
         if (!isOo) return reply(mess.only.user)
         if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
         reply(mess.wait)
@@ -1856,6 +1953,7 @@ async function starts() {
         }
         break
         case 'infocuaca':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
         if (!isOo) return reply(mess.only.user)
         tels = body.slice(10)
         if (args.length < 1) return reply('Daerahnya dimana kak?')
@@ -1865,18 +1963,20 @@ async function starts() {
         client.sendMessage(from, tect, {quoted: mek})
         break 
         case 'kbbi':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
         if (!isOo) return reply(mess.only.user)
         kbb = body.slice(5)
         reply(mess.wait)
-        anu = await fetchJson (`https://tobz-api.herokuapp.com/api/kbbi?kata=${body.slice(5)}&apikey=${tobzapi}`, {method: 'get'})
+        anu = await fetchJson (`https://tobz-api.herokuapp.com/api/kbbi?kata=${kbb}&apikey=BotWeA`, {method: 'get'})
         teks = `*[❗] Menurut Kamus Kbbi*\n\n*${anu.result}*`
         reply(teks)
         break 
         case 'infofilm':
+if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
         if (!isOo) return reply(mess.only.user)
         reply(mess.wait)
         kpp = body.slice(9)
-        anu = await fetchJson(`https://tobz-api.herokuapp.com/api/film?q=${kpp}&apikey=${tobzapi}`, {method: 'get'})
+        anu = await fetchJson(`https://tobz-api.herokuapp.com/api/film?q=${kpp}&apikey=BotWeA`, {method: 'get'})
         buffte = await getBuffer(anu.thumb)
         teks = `*❥JUDUL*'${anu.judul}\n*❥GENRE*:${anu.genre_negara}\n*❥RATING*:${anu.rating}\n*❥LINK*:${anu.link}`
         client.sendMessage(from, buffte, image, {quoted: mek, caption: teks})
