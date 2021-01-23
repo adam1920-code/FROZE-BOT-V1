@@ -1056,7 +1056,7 @@ if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                   case 'husbu':
 if (!isVip) return reply(`[❗] Maaf Peritah Ini Hanya Untuk User Premium!!`)
                   if (!isOo) return reply(mess.only.user)
-                   anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/husbuando`, {methoty 'get'})
+                   anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/husbuando`, {method: 'get'})
                    supr = await getBuffer(anu.img)
                    client.sendMessage(from, supr, image, {quoted: mek, caption: 'teks'})
                    break
