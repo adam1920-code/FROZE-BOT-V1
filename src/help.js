@@ -1,6 +1,32 @@
 const help = (prefix) => {
 	return ` 
 ╔══☾❣️ YEONGSILL BOT ❣️☽═
+• *FREE MENU*
+ ├─ 🔱 ${prefix}sticker
+ ├─ 🔱 ${prefix}stickergif
+ ├─ 🔱 ${prefix}toimg
+╠═══════════════
+• *GROUP MENU*
+ 🔱 ${prefix}opengc
+  ├─ 🔱 ${prefix}closegc
+  ├─ 🔱 ${prefix}promote
+  ├─ 🔱 ${prefix}demote
+  ├─ 🔱 ${prefix}tagall
+  ├─ 🔱 ${prefix}tagall2
+  ├─ 🔱 ${prefix}tagall3
+  ├─ 🔱 ${prefix}tagall4
+  ├─ 🔱 ${prefix}tagall5
+  ├─ 🔱 ${prefix}add
+  ├─ 🔱 ${prefix}kick
+  ├─ 🔱 ${prefix}listadmins
+  ├─ 🔱 ${prefix}linkgroup
+  ├─ 🔱 ${prefix}leave
+  ├─ 🔱 ${prefix}welcome 1
+  ├─ 🔱 ${prefix}nsfw
+  ├─ 🔱 ${prefix}simih
+  └─ 🔱 ${prefix}ownergroup
+╠═══════════════
+• *VIP MENU*
 ║🌸 *->${prefix}loli*
 ║🌸 *->${prefix}ssweb*
 ║🌸 *->${prefix}wiki*
@@ -28,28 +54,9 @@ const help = (prefix) => {
 ║🌸 *->${prefix}firetext <text>*
 ║🌸 *->${prefix}wait*
 ║🌸 *->${prefix}pastebin [nama|teks]
-║🌸 *->${prefix}phubcomment [nama|url|teks]*
-║🌸 *->${prefix}add [+62×××××××××]*
-║🌸 *->${prefix}kick @tagmember*
-║🌸 *->${prefix}promote @tagmember*
-║🌸 *->${prefix}demote @tagmember*
-║🌸 *->${prefix}linkgroup*
-║🌸 *->${prefix}leave*
-║🌸 *->${prefix}tagall*
-║🌸 *->${prefix}changlog*
-║🌸 *->${prefix}info*
-║🌸 *->${prefix}donasi*
-║🌸 *->${prefix}tutorial*
-║🌸 *->${prefix}infogc*
+║🌸 *->${prefix}phubcomment
 ║🌸 *->${prefix}tiktokstalk @username*
-║🌸 *->${prefix}listadmin*
-║🌸 *->${prefix}welcome*
-║🌽 *->usege !welcome 1 = on*
-║🌽 *->usege !welcome 0 = off*
-║🌸 *->${prefix}blocklist*
 ║🌸 *->${prefix}kerangmenu*
-║🌸 *->${prefix}closegc*
-║🌸 *->${prefix}opengc*
 ║🌸 *->${prefix}setname*
 ║🌸 *->${prefix}setdesc*
 ║🌸 *->${prefix}toxic <text>*
@@ -80,8 +87,6 @@ const help = (prefix) => {
 ║🌸 *->${prefix}surah*
 ║🌸 *->${prefix}kbbi*
 ║🌸 *->${prefix}play <text>*
-║🌸 *->${prefix}nsfw [1/0]*
-║🌸 *->nsfw 1 = on 0 = off*
 ║🌸 *->${prefix}waifu*
 ║🌸 *->${prefix}ramalajodoh [nama|nama2]*
 ╠═══════════════
@@ -100,7 +105,7 @@ _*Special Thaks To*_
 🌸 *KEDUA ORANG TUA*
 🌸 *HP SENDIR*
 🌸 *DIRI SENDIRI*
-🌸*TEMEN YANG GAK TAU DIRI*
+🌸 *TEMEN YANG GAK TAU DIRI*
 =======================
 ┌─*☾CHANGLOG☽*─┐
 *➥New Ui*
